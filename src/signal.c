@@ -1,7 +1,6 @@
 /*
  * Copyright (c) 2016 Swift Navigation Inc.
  * Contact: Swift Navigation <dev@swift-nav.com>
- *          Pasi Miettinen <pasi.miettinen@exafore.com>
  *
  * This source is subject to the license found in the file 'LICENSE' which must
  * be distributed together with this source. All other rights reserved.

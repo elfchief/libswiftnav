@@ -1,7 +1,6 @@
 /*
  * Copyright (C) 2012 Swift Navigation Inc.
  * Contact: Swift Navigation <dev@swiftnav.com>
- *          Fergus Noble <fergus@swift-nav.com>
  *
  * This source is subject to the license found in the file 'LICENSE' which must
  * be distributed together with this source. All other rights reserved.
@@ -31,11 +30,11 @@ extern "C" {
 #ifndef MIN
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 #endif
-  
+
 #ifndef MAX
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #endif
-  
+
 #define CLAMP_DIFF(a, b) (MAX((a), (b)) - (b))
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 #define ARRAY_SIZE2(a) (sizeof(a) / sizeof((a)[0][0]))
@@ -95,7 +94,7 @@ typedef uint64_t u64;
 
 #if !defined(SBP_PACK_START) || !defined(SBP_PACK_END) || !defined(SBP_ATTR_PACKED)
 #error Unknown compiler, please override SBP_PACK_START, SBP_PACK_END, and SBP_ATTR_PACKED
-#endif 
+#endif
 
 #endif /* toolchaing packing macros */
 
