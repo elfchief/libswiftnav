@@ -1,7 +1,7 @@
 libswiftnav
 ===========
 
-Libswiftnav (LSN) is a platform independent library that implements GNSS utility functions for use by software-defined GNSS receivers or software requiring GNSS functionality. It is intended to be as portable as possible and is written in standards compliant C++ with no dependancies other than the Eigen matrix library
+Libswiftnav (LSN) is a platform independent library that implements GNSS utility functions for use by software-defined GNSS receivers or software requiring GNSS functionality. It is intended to be as portable as possible and is written in standards compliant C with no dependancies
 
 LSN does not provide any functionality for communicating with Swift
 Navigation receivers.  See [libsbp](https://github.com/swift-nav/libsbp) to
