@@ -52,7 +52,6 @@ extern "C" {
     do_every_count++;                           \
   } while (0)
 
-
 #ifndef COMMON_INT_TYPES
 #define COMMON_INT_TYPES
 
@@ -63,11 +62,11 @@ extern "C" {
  * `int` which can lead to portability issues between different platforms.
  * \{ */
 
-typedef int8_t    s8;
-typedef int16_t  s16;
-typedef int32_t  s32;
-typedef int64_t  s64;
-typedef uint8_t   u8;
+typedef int8_t s8;
+typedef int16_t s16;
+typedef int32_t s32;
+typedef int64_t s64;
+typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
@@ -80,19 +79,20 @@ typedef uint64_t u64;
 /* Set packing based upon toolchain */
 #if defined(__GNUC__) || defined(__clang__)
 
-#define SBP_PACK_START   /* Intentionally empty */
-#define SBP_PACK_END     /* Intentionally empty */
+#define SBP_PACK_START /* Intentionally empty */
+#define SBP_PACK_END   /* Intentionally empty */
 #define SBP_ATTR_PACKED __attribute__((packed))
 
 #elif defined(_MSC_VER)
 
 #define SBP_PACK_START __pragma(pack(1));
 #define SBP_PACK_END __pragma(pack());
-#define SBP_ATTR_PACKED  /* Intentionally empty */
+#define SBP_ATTR_PACKED /* Intentionally empty */
 
 #else
 
-#if !defined(SBP_PACK_START) || !defined(SBP_PACK_END) || !defined(SBP_ATTR_PACKED)
+#if !defined(SBP_PACK_START) || !defined(SBP_PACK_END) || \
+    !defined(SBP_ATTR_PACKED)
 #error Unknown compiler, please override SBP_PACK_START, SBP_PACK_END, and SBP_ATTR_PACKED
 #endif
 
