@@ -31,8 +31,7 @@ static void glo_map_lock(void) {
 }
 
 /** Unlocks glo_sv_id_fcn_map for multithread access */
-static void glo_map_unlock(void)
-{
+static void glo_map_unlock(void) {
   if (unlock) {
     unlock();
   }
