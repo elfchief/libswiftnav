@@ -55,7 +55,8 @@ START_TEST(test_normalize_gps_time) {
                   t_normalized);
     }
     /* normalization must not touch unknown week number */
-    fail_unless(wn != WN_UNKNOWN || testcases[i].wn == WN_UNKNOWN);
+    fail_unless(wn
+      != WN_UNKNOWN || testcases[i].wn == WN_UNKNOWN);
   }
 }
 END_TEST
