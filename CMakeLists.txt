@@ -30,7 +30,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U__STRICT_ANSI__")
 # Write configuration to a templated header file.
 set(MAX_CHANNELS "63" CACHE STRING "Maximum number of concurrent GNSS channels to support.")
 configure_file("include/swiftnav/config.h.in"
-  "${CMAKE_SOURCE_DIR}/include/swiftnav/config.h")
+  "${CMAKE_CURRENT_LIST_DIR}/include/swiftnav/config.h")
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
