@@ -44,7 +44,7 @@ matrix:
 
     # GCC 6 / Unit Test.
     - env: COMPILER=gcc-6 TEST_SUITE=unit
-      addons: { apt: { packages: ["g++-6", "check"],
+      addons: { apt: { packages: ["gcc-6", "check"],
                        sources: ["ubuntu-toolchain-r-test"] } }
     # ------------------------------------------------------------------
     # Lint and check compilation builds with Clang
@@ -52,7 +52,8 @@ matrix:
 
     # CLANG / Lint
     - env: COMPILER=clang-3.8 TEST_SUITE=lint
-      addons: { apt: { packages: ["clang-3.8",
+      addons: { apt: { packages: ["gcc-6",
+                                  "clang-3.8",
                                   "clang-tidy-3.8",
                                   "clang-format-3.8",
                                   "libc++-dev",
