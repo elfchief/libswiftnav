@@ -44,7 +44,7 @@ matrix:
 
     # GCC 6 / Unit Test.
     - env: TEST_SUITE=unit
-	  compiler: gcc-6
+      compiler: gcc-6
       addons: { apt: { packages: ["g++-6", "check"],
                        sources: ["ubuntu-toolchain-r-test"] } }
     # ------------------------------------------------------------------
