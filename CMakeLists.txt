@@ -1,14 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 project(libswiftnav)
 
-# Include any extra CMake modules
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
 include(ClangTools)
 include(FindCheck)
-# TODO: figure out why we are missing a defintion of log_ in the .a
-set(BUILD_SHARED_LIBS ON CACHE BOOL "If set, build shared libraries where possible.")
 
-# Write configuration to a templated header file.
 set(MAX_CHANNELS "63" CACHE STRING "Maximum number of concurrent GNSS channels to support.")
 configure_file("include/swiftnav/config.h.in"
   "${PROJECT_SOURCE_DIR}/include/swiftnav/config.h")
@@ -67,7 +63,6 @@ add_library(swiftnav ${HDRS} ${SRCS})
 target_include_directories(swiftnav PUBLIC ${PROJECT_SOURCE_DIR}/include)
 install(FILES ${HDRS} DESTINATION include)
 
-# Set any mandatory compiler flags for this library.
 target_compile_options(swiftnav PRIVATE "-Werror")
 target_compile_options(swiftnav PRIVATE "-Wmissing-prototypes")
 target_compile_options(swiftnav PRIVATE "-Wimplicit")
@@ -87,4 +82,4 @@ target_compile_options(swiftnav PRIVATE "-Wformat-security")
 # unit tests
 if(NOT CMAKE_CROSSCOMPILING AND NOT PIKSI_MULTI_UNIT_TEST)
     add_subdirectory(tests)
-endif(NOT CMAKE_CROSSCOMPILING AND NOT PIKSI_MULTI_UNIT_TEST)
+endif()
